@@ -128,6 +128,11 @@ function makeArticles(articleAttrs) {
   article.appendChild(p3)
   article.appendChild(button)
 
+  //add classes where needed
+
+  article.classList.add('article')
+  theDate.classList.add('date')
+  button.classList.add('expandButton')
   // <div class="article">
   //   <h2>{title of the article}</h2>
   //   <p class="date">{date of the article}</p>
