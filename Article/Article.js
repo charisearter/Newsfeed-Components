@@ -92,14 +92,9 @@ const data = [
   Hint: You will need to use createElement more than once here!
  X Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  X Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
+  X Step 3: return the entire component.
 */
 
 // where it will all go the container
@@ -142,14 +137,25 @@ function makeArticles(articleAttrs) {
   //   <span class='expandButton'></span>
   // </div>
 
-
+button.addEventListener('click', (event) => {
+  //toggle open and shut of article with article-open
+  article.classList.toggle('article-open')
+})
 
 //return the article
   return article
+}// make article function complete
 
-}
+// Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
-//check
+data.map(articleAttrs => {
+  const article = makeArticles(articleAttrs)
+  articles.appendChild(article)
+})
+
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+
+// //check
 const theArticle = makeArticles({ title: 'a title', date: '2020/05/05', firstParagraph: 'whatever 1', secondParagraph: 'whatever 2', thirdParagraph: 'whatever 3' })
-console.log(theArticle)
 articles.appendChild(theArticle)
