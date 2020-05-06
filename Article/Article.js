@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Cat Ipsum',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Meow all night having their mate disturbing sleeping humans lick yarn hanging out of own butt, pet right here, no not there, here, no fool, right here that other cat smells funny you should really give me all the treats because i smell the best and omg you finally got the right spot and i love you right now but white cat sleeps on a black shirt. Meow behind the couch, or throw down all the stuff in the kitchen ears back wide eyed find something else more interesting. Hide at bottom of staircase to trip human cat is love, cat is life and i could pee on this if i had the energy. Decide to want nothing to do with my owner today mrow. Cough furball jump five feet high and sideways when a shadow moves yet meowing non stop for food get video posted to internet for chasing red dot rub face on owner meow meow, i tell my human. Refuse to drink water except out of someone’s glass. Hide from vacuum cleaner lick butt and make a weird face so chirp at birds purr for no reason. Spit up on light gray carpet instead of adjacent linoleum scratch at fleas, meow until belly rubs, hide behind curtain when vacuum cleaner is on scratch strangers and poo on owners food but cat not kitten around bleghbleghvomit my furball really tie the room together so hide from vacuum cleaner yet ignore the squirrels, you’ll never catch them anyway. Lay on arms while you’re using the keyboard. Chew on cable jump around on couch, meow constantly until given food, but i just saw other cats inside the house and nobody ask me before using my litter box or play riveting piece on synthesizer keyboard meowing chowing and wowing under the bed mice. `,
+
+    secondParagraph: `Plays league of legends stare out the window. Lies down lick sellotape hopped up on catnip, yet bleghbleghvomit my furball really tie the room together, thug cat . Play riveting piece on synthesizer keyboard sit in window and stare oooh, a bird, yum shove bum in owner’s face like camera lens or toy mouse squeak roll over. Fall asleep on the washing machine hide when guests come over stare at guinea pigs yet vommit food and eat it again eat and than sleep on your face. Jump five feet high and sideways when a shadow moves throwup on your pillow. Missing until dinner time. Pet right here, no not there, here, no fool, right here that other cat smells funny you should really give me all the treats because i smell the best and omg you finally got the right spot and i love you right now nap all day flop over, so missing until dinner time, for see owner, run in terror sun bathe. Give attitude intently sniff hand, yet meow all night having their mate disturbing sleeping humans. Lounge in doorway chase imaginary bugs.? `,
+
+    thirdParagraph: `Scream at teh bath. My left donut is missing, as is my right the dog smells bad and loves cheeseburgers, refuse to drink water except out of someone’s glass. Flee in terror at cucumber discovered on floor sleep nap or gnaw the corn cob give me attention or face the wrath of my claws. Lounge in doorway groom yourself 4 hours – checked, have your beauty sleep 18 hours – checked, be fabulous for the rest of the day – checked so poop on grasses, but refuse to leave cardboard box and small kitty warm kitty little balls of fur so walk on car leaving trail of paw prints on hood and windshield eat the fat cats food. Ears back wide eyed kitty poochy and jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans but playing with balls of wool find something else more interesting, cough furball.`
   }
 ];
 
@@ -127,7 +136,7 @@ function makeArticles(articleAttrs) {
 
   article.classList.add('article')
   theDate.classList.add('date')
-  button.classList.add('expandButton')
+  button.classList.add('article','expandButton')
   // <div class="article">
   //   <h2>{title of the article}</h2>
   //   <p class="date">{date of the article}</p>
@@ -136,6 +145,14 @@ function makeArticles(articleAttrs) {
 
   //   <span class='expandButton'></span>
   // </div>
+
+//add text content
+theTitle.textContent = title
+theDate.textContent = date
+p1.textContent = firstParagraph
+p2.textContent = secondParagraph
+p3.textContent = thirdParagraph
+
 
 button.addEventListener('click', (event) => {
   //toggle open and shut of article with article-open
