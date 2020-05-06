@@ -88,20 +88,9 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div>
-
+/* X Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   Hint: You will need to use createElement more than once here!
-
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+ X Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
@@ -112,18 +101,50 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+// where it will all go the container
+
+const articles = document.querySelector('.articles')
+
+//function to make new articles
+
 function makeArticles(articleAttrs) {
   const { title, date, firstParagraph, secondParagraph, thirdParagraph } = articleAttrs
-
+//set elements
   const article = document.createElement('div')
-  const title = document.createElement('h2')
-  const date = document.createElement('p')
-  const firstParagraph = document.createElement('p')
-  const secondParagraph = document.createElement('p')
-  const thirdParagraph = document.createElement('p')
+  const theTitle = document.createElement('h2')
+  const theDate = document.createElement('p')
+  const p1 = document.createElement('p')
+  const p2 = document.createElement('p')
+  const p3 = document.createElement('p')
   const button = document.createElement('span')
+
+  //structure elements
+
+  article.appendChild(theTitle)
+  article.appendChild(theDate)
+  article.appendChild(p1)
+  article.appendChild(p2)
+  article.appendChild(p3)
+  article.appendChild(button)
+
+  // <div class="article">
+  //   <h2>{title of the article}</h2>
+  //   <p class="date">{date of the article}</p>
+
+  //   {three separate paragraph elements}
+
+  //   <span class='expandButton'></span>
+  // </div>
+
+
 
 //return the article
   return article
 
 }
+
+//check
+const theArticle = makeArticles({ title: 'a title', date: '2020/05/05', firstParagraph: 'whatever 1', secondParagraph: 'whatever 2', thirdParagraph: 'whatever 3' })
+console.log(theArticle)
+articles.appendChild(theArticle)
